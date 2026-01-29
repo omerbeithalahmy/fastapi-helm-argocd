@@ -1,6 +1,6 @@
 # FastAPI + Helm + ArgoCD - End-to-End DevOps Workflow 🚀
 
-A complete end-to-end DevOps portfolio project demonstrating GitOps principles, CI/CD automation, Kubernetes orchestration, and comprehensive monitoring using industry-standard tools.
+A complete end-to-end DevOps project demonstrating GitOps principles, CI/CD automation, Kubernetes orchestration, and comprehensive monitoring using industry-standard tools.
 
 ## 📋 Table of Contents
 
