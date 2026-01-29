@@ -1,0 +1,44 @@
+name: CI for fastapi-app
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'helm/**'
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD}}
+      - name: Generate short SHA
+        id: vars
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+      - name: Build and Push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags:  |
+            ${{ secrets.DOCKER_USERNAME }}/fastapi-helm-argocd:${{ steps.vars.outputs.sha_short }}
+            ${{ secrets.DOCKER_USERNAME }}/fastapi-helm-argocd:latest
+      - name: Update Helm chart
+        run:  |
+          sudo snap install yq
+          yq -i ' .image.tag = "${{ steps.vars.outputs.sha_short }}"' fastapi-chart/values.yaml
+          git config --global user.name "Github Actions"
+          git config --global user.email "actions@github.com"
+          git add fastapi-chart/values.yaml
+          git commit -m "Update image tag to ${{ steps.vars.outputs.sha_short }}"
+          git push
