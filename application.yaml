@@ -4,7 +4,7 @@ metadata:
   name: fastapi-app
   namespace: argocd
   annotations:
-    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: ""
+    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: argocd-alerts
 spec:
   project: default
   source: 
