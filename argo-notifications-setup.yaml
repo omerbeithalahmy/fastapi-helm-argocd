@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 data:
   service.slack:  |
-    token: $slack.token
+    token: $slack-token
   template.app-sync-succeeded:  |
     message:  |
       ✅ Application {{.app.metadata.name}} is now running!
