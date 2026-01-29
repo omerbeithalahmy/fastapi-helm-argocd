@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths-ignore:
       - 'helm/**'
+      - 'manifests/**'
   pull_request:
     branches: [main]
 
@@ -36,9 +37,9 @@ jobs:
       - name: Update Helm chart
         run:  |
           sudo snap install yq
-          yq -i ' .image.tag = "${{ steps.vars.outputs.sha_short }}"' fastapi-chart/values.yaml
+          yq -i ' .image.tag = "${{ steps.vars.outputs.sha_short }}"' helm/fastapi-chart/values.yaml
           git config --global user.name "Github Actions"
           git config --global user.email "actions@github.com"
-          git add fastapi-chart/values.yaml
+          git add helm/fastapi-chart/values.yaml
           git commit -m "Update image tag to ${{ steps.vars.outputs.sha_short }}"
           git push

@@ -10,7 +10,7 @@ spec:
   source: 
     repoURL: https://github.com/omerbeithalahmy/fastapi-helm-argocd.git
     targetRevision: main
-    path: fastapi-chart
+    path: helm/fastapi-chart
   destination:
     server: https://kubernetes.default.svc
     namespace: default
