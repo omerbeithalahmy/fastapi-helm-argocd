@@ -1,4 +1,4 @@
-replicaCount: 7
+replicaCount: 10
 
 image:
   repository: omerbh7/fastapi-helm-argocd
