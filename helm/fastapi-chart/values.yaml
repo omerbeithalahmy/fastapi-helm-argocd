@@ -1,14 +1,11 @@
 replicaCount: 1
-
 image:
   repository: omerbh7/fastapi-helm-argocd
-  tag: "fe82d69"
+  tag: "f56126b"
   pullPolicy: IfNotPresent
-
 service:
   type: ClusterIP
   port: 8000
-
 ingress:
   enabled: true
   host: fastapi.local
