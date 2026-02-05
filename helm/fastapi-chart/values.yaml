@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: omerbh7/fastapi-helm-argocd
-  tag: "ba1cdec"
+  tag: "5f60079"
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
