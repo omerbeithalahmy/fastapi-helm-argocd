@@ -2,20 +2,6 @@
 
 A complete end-to-end DevOps portfolio project demonstrating GitOps principles, CI/CD automation, Kubernetes orchestration, comprehensive monitoring, and Slack notifications using industry-standard tools.
 
-## 📋 Table of Contents
-
-- [Project Overview](#project-overview)
-- [Architecture](#architecture)
-- [Technologies Used](#technologies-used)
-- [Prerequisites](#prerequisites)
-- [Complete Setup Guide](#complete-setup-guide)
-- [Accessing Services](#accessing-services)
-- [CI/CD Pipeline](#cicd-pipeline)
-- [Monitoring & Observability](#monitoring--observability)
-- [Slack Notifications](#slack-notifications)
-- [Repository Structure](#repository-structure)
-- [Troubleshooting](#troubleshooting)
-- [Learning Outcomes](#learning-outcomes)
 
 ## 🎯 Project Overview
 
