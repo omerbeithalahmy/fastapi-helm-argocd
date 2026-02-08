@@ -751,11 +751,4 @@ This project demonstrates:
 ✅ **Notification Integration**: Real-time Slack alerts for deployment events  
 ✅ **DevOps Best Practices**: Automated sync, self-healing, rollback capabilities  
 
-## 👤 Author
-
-**Omer Beit Halahmy**
-
-- GitHub: [@omerbeithalahmy](https://github.com/omerbeithalahmy)
-- Docker Hub: [omerbh7](https://hub.docker.com/u/omerbh7)
-
 
